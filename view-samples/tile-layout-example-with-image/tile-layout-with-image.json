@@ -1,129 +1,248 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
-  "tileProps": {
-    "height": "450",
-    "width": "300",
-    "formatter": {
-      "elmType": "div",
-      "style": {
-        "display": "flex",
-        "align-items": "stretch",
-        "margin-bottom": "16px",
-        "min-width": "150px",
-        "flex-grow": "1",
-        "justify-content": "space-around",
-        "padding": "8px",
-        "color": "#333333"
-      },
-      "children": [
-        {
-          "elmType": "div",
-          "style": {
-            "width": "95%",
-            "height": "98%",
-            "box-shadow": "0px 1.6px 3.6px 0 #00000024, 0px 0.3px 0.9px 0 #00000024",
-            "overflow": "hidden",
-            "border-radius": "2px"
-          },
-          "attributes": {
-            "class": "ms-bgColor-neutralLighterAlt"
-          },
-          "children": [
-            {
-              "elmType": "div",
-              "style": {
-                "display": "inline-block",
-                "min-width": "300px"
-              },
-              "children": [
-                {
-                  "elmType": "img",
-                  "attributes": {
-                    "src": "=if([$ProductPhoto] == '', @currentWeb + '/_layouts/15/userphoto.aspx?size=M', [$ProductPhoto])",
-                    "title": "=if([$ProductPhoto] == '', 'No picture available', [$Picture.desc])"
-                  },
-                  "style": {
-                    "width": "100%",
-                    "height": "200px"
-                  }
-                }
-              ]
+  "height": "450",
+  "width": "300",
+  "formatter": {
+    "elmType": "div",
+    "style": {
+      "display": "flex",
+      "align-items": "stretch",
+      "margin-bottom": "16px",
+      "min-width": "150px",
+      "flex-grow": "1",
+      "justify-content": "space-around",
+      "padding": "8px",
+      "color": "#333333"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "width": "95%",
+          "height": "98%",
+          "box-shadow": "0px 1.6px 3.6px 0 #00000024, 0px 0.3px 0.9px 0 #00000024",
+          "background-color": "#ffffff",
+          "overflow": "hidden",
+          "border-radius": "2px"
+        },
+        "attributes": {
+          "class": "ms-bgColor-neutralLighterAlt"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "display": "flex",
+              "height": "150px",
+              "justify-content": "center",
+              "align-items": "center",
+              "overflow":"hidden"
             },
-            {
-              "elmType": "div",
-              "style": {
-                "display": "inline-block",
-                "min-width": "300px",
-                "vertical-align": "top",
-                "padding-left": "16px",
-                "padding-top": "16px"
-              },
-              "children": [
-                {
-                  "elmType": "div",
-                  "style": {
-                    "color": "#767676",
-                    "font-size": "12px"
-                  },
-                  "txtContent": "Product"
+            "children": [
+              {
+                "elmType": "img",
+                "attributes": {
+                  "src": "=if([$Logo] == '', @currentWeb + '/_layouts/15/userphoto.aspx?size=M', [$Logo.serverRelativeUrl])"
                 },
-                {
-                  "elmType": "div",
-                  "style": {
-                    "margin-bottom": "12px",
-                    "font-size": "16px",
-                    "font-weight": "600"
-                  },
-                  "txtContent": "[$Title]"
-                },
-                {
-                  "elmType": "div",
-                  "txtContent": "Price",
-                  "style": {
-                    "color": "#767676",
-                    "font-size": "12px",
-                    "margin-bottom": "2px"
-                  }
-                },
-                {
-                  "elmType": "div",
-                  "style": {
-                    "font-size": "14px",
-                    "margin-bottom": "12px"
-                  },
-                  "txtContent": {
-                    "operator": "+",
-                    "operands": [
-                      "$",
-                      "",
-                      "[$ProductPrice]"
-                    ]
-                  }
-                },
-                {
-                  "elmType": "div",
-                  "txtContent": "Features",
-                  "style": {
-                    "color": "#767676",
-                    "font-size": "12px",
-                    "margin-bottom": "2px"
-                  }
-                },
-                {
-                  "elmType": "div",
-                  "style": {
-                    "font-size": "14px",
-                    "margin-bottom": "10px",
-                    "width": "235px",
-                    "height": "70px"
-                  },
-                  "txtContent": "[$Features]"
+                "style": {
+                  "flex-shrink": "0",
+                  "-webkit-flex-shrink": "0",
+                  "max-width": "70%",
+                  "max-height": "90%"
                 }
-              ]
-            }
-          ]
-        }
-      ]
-    }
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "display": "inline-block",
+              "min-width": "300px",
+              "vertical-align": "top",
+              "padding-left": "16px",
+              "padding-top": "16px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "color": "#767676",
+                  "font-size": "12px"
+                },
+                "txtContent": "Software Name"
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "margin-bottom": "12px",
+                  "font-size": "16px",
+                  "font-weight": "600"
+                },
+                "txtContent": "[$Title]"
+              },
+              {
+                "elmType": "div",
+                "txtContent": "Description",
+                "style": {
+                  "color": "#767676",
+                  "font-size": "12px",
+                  "margin-bottom": "2px"
+                }
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "font-size": "14px",
+                  "margin-bottom": "10px",
+                  "width": "235px",
+                  "height": "70px"
+                },
+                "txtContent": "[$Description]"
+              },
+              {
+                "elmType": "div",
+                "txtContent": "Links",
+                "style": {
+                  "color": "#767676",
+                  "font-size": "12px",
+                  "margin-bottom": "2px"
+                }
+              },
+              {
+                "elmType": "a",
+                "style": {
+                  "display": "=if([$GetHelp]=='','none','inline-block')",
+                  "background-color": "#17aa56",
+                  "color": "#ffffffd1",
+                  "border-radius": "5px",
+                  "box-shadow": "0 3x #119e4d",
+                  "padding": "3px 10px 3px 5px",
+                  "text-decoration": "none",
+                  "margin-top": "5px",
+                  "margin-right":"5px",
+                  "font-size": "11px",
+                  "text-transform": "uppercase"
+                },
+                "attributes": {
+                  "href": "[$GetHelp]",
+                  "target": "_blank"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "iconName": "Help"
+                    },
+                    "style": {
+                      "display": "inline-block",
+                      "font-size": "9px",
+                      "padding": "4px",
+                      "font-weight": "bold",
+                      "margin-right": "5px",
+                      "border-right": "1px #ffffffd1 solid",
+                      "padding-right": "5px"
+                    }
+                  },
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "inline-block"
+                    },
+                    "txtContent": "Get help"
+                  }
+                ]
+              },
+              {
+                "elmType": "a",
+                "style": {
+                  "display": "=if([$Login]=='','none','inline-block')",
+                  "background-color": "#17aa56",
+                  "color": "#ffffffd1",
+                  "border-radius": "5px",
+                  "box-shadow": "0 3x #119e4d",
+                  "padding": "3px 10px 3px 5px",
+                  "text-decoration": "none",
+                  "margin-right":"5px",
+                  "margin-top": "5px",
+                  "font-size": "11px",
+                  "text-transform": "uppercase"
+                },
+                "attributes": {
+                  "href": "[$Login]",
+                  "target": "_blank"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "iconName": "Signin"
+                    },
+                    "style": {
+                      "display": "inline-block",
+                      "font-size": "9px",
+                      "padding": "4px",
+                      "font-weight": "bold",
+                      "margin-right": "5px",
+                      "border-right": "1px #ffffffd1 solid",
+                      "padding-right": "5px"
+                    }
+                  },
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "inline-block"
+                    },
+                    "txtContent": "Login"
+                  }
+                ]
+              },
+              {
+                "elmType": "a",
+                "style": {
+                  "display": "=if([$ManageLicenses]=='','none','inline-block')",
+                  "background-color": "#17aa56",
+                  "color": "#ffffffd1",
+                  "border-radius": "5px",
+                  "box-shadow": "0 3x #119e4d",
+                  "padding": "3px 10px 3px 5px",
+                  "text-decoration": "none",
+                  "margin-right":"5px",
+                  "margin-top": "5px",
+                  "font-size": "11px",
+                  "text-transform": "uppercase"
+                },
+                "attributes": {
+                  "href": "[$ManageLicenses]",
+                  "target": "_blank"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "iconName": "People"
+                    },
+                    "style": {
+                      "display": "inline-block",
+                      "font-size": "9px",
+                      "padding": "4px",
+                      "font-weight": "bold",
+                      "margin-right": "5px",
+                      "border-right": "1px #ffffffd1 solid",
+                      "padding-right": "5px"
+                    }
+                  },
+                  {
+                    "elmType": "div",
+                    "style": {
+                      "display": "inline-block"
+                    },
+                    "txtContent": "Manage licenses"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
